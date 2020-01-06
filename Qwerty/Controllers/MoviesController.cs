@@ -13,7 +13,7 @@ namespace Qwerty.Controllers
         public ActionResult Random()
         {
             var movie = new Movie() {Name = "Coherence"};
-            return View();
+            return View(movie);
         }
     }
 }

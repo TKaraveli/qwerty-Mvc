@@ -88,6 +88,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\lib\boostrapv4\css\bootstrap-lumen.css" />
     <Content Include="Content\lib\boostrapv4\css\bootstrap.min.css" />
     <Content Include="Content\lib\boostrapv4\js\bootstrap.js" />
     <Content Include="Content\lib\jquery\jquery-3.3.1.js" />
