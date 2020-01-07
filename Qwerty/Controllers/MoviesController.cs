@@ -27,9 +27,15 @@ namespace Qwerty.Controllers
         }
 
         // movies
-        public ActionResult Index()
+        public ActionResult Index(int? pageIndex, string sortBy)
         {
+            if (!pageIndex.HasValue)
+                pageIndex = 1;
 
+            if (String.IsNullOrWhiteSpace(sortBy))
+                sortBy = "Name";
+
+            return Content($"pageIndex={pageIndex}&sortBy={sortBy}");
         }
     }
 }
