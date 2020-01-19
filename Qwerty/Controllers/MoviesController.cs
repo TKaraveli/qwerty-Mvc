@@ -9,6 +9,7 @@ namespace Qwerty.Controllers
 {
     public class MoviesController : Controller
     {
+
         // GET: Movies/Random
         public ActionResult Random()
         {
@@ -37,5 +38,14 @@ namespace Qwerty.Controllers
 
             return Content($"pageIndex={pageIndex}&sortBy={sortBy}");
         }
+
+        [Route("movies/released/{year}/{month:regex(\\d{2}):range(1,12)}")]
+        public ActionResult ByReleaseYear(int year, byte month)
+        {
+
+            return Content(year + "/" + month);
+        }
+
+        
     }
 }

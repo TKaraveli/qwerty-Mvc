@@ -13,11 +13,16 @@ namespace Qwerty
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                "MoviesByReleaseDate",
-                "movies/released/{year}/{month}",
-                new {controller = "Movies", action = "ByReleaseDate"}
-                );
+            routes.MapMvcAttributeRoutes();
+
+            //routes.MapRoute(
+            //    "MoviesByReleaseDate",
+            //    "movies/released/{year}/{month}",
+            //    new {controller = "Movies", action = "ByReleaseDate"},
+            //    new { year = @"\{4}", month = @"\d{2}" } //yıl kısmına 4, ay kısmına 2 haneli sayı girilmesi zorunluluğu getiriyor.
+            //    //new { year = @"2015|2016", month = @"\d{2}" } //yalnızca 2015 veya 2016 değerleri alabilir.
+            //    );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
